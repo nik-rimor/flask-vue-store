@@ -32,11 +32,11 @@ class ItemModel(db.Model):
 
 
 # display selected config settings
-import sys
-print(app.config, file=sys.stderr)
+# import sys
+# print(app.config, file=sys.stderr)
 
 
-@app.route('/users/ping', methods=['GET'])
+@app.route('/items/ping', methods=['GET'])
 def ping_pong():
     return jsonify({
         'status': 'success',

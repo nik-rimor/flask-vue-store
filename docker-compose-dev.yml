@@ -14,8 +14,10 @@ services:
       - FLASK_APP=project/__init__.py
       - FLASK_ENV=development
       - APP_SETTINGS=project.config.DevelopmentConfig
-      - DATABASE_URL=postgres://postgres:postgres@users-db:5432/webapi_dev
-      - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/webapi_test
+      - DATABASE_URL=postgres://postgres:postgres@webapi-db:5432/webapi_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@webapi-db:5432/webapi_test
+    depends_on: 
+      - webapi-db
   
   webapi-db:
     build:
